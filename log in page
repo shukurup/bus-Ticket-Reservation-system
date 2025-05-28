@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .alert {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="userType">Login as:</label>
+      <select id="userType" required>
+        <option value="">SELECT USER TYPE</option>
+        <option value="Passenger">Passenger</option>
+        <option value="Admin">Admin</option>
+        
+      </select>
+
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10,12}">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit" class="login-btn">Log In</button>
+      <div class="alert" id="alertBox"></div>
+    </form>
+
+    <div class="signup-link">
+      Don't have an account? <a href="sigin up">Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+  const form = document.getElementById('loginForm');
+  const alertBox = document.getElementById('alertBox');
+
+  // Admin credentials
+  const adminUsername = "shukuru";
+  const adminPhone = "0790223668";
+  const adminPassword = "123456";
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const userType = document.getElementById('userType').value;
+    const fullName = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (!userType || !fullName || !phone || !password) {
+      alertBox.textContent = "Please fill out all fields.";
+      return;
+    }
+
+    if (userType === "Admin") {
+      if (
+        fullName === adminUsername &&
+        phone === adminPhone &&
+        password === adminPassword
+      ) {
+        // Redirect to admin page
+        window.location.href = "ADMIN";
+      } else {
+        alertBox.textContent = "Invalid admin credentials.";
+      }
+    } else if (userType === "Passenger") {
+      // Redirect to company page
+      window.location.href = "company page";
+    } else if (userType === "Developer") {
+      alertBox.textContent = "Developer login is not implemented yet.";
+    } else {
+      alertBox.textContent = "Invalid user type.";
+    }
+  });
+</script>
+
+</body>
+</html>

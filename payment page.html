@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Available Routes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8e1;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #e65100;
+    }
+    .route-table {
+      margin: 30px auto;
+      width: 90%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #ffcc80;
+    }
+    th {
+      background-color: #ff9800;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #fff3e0;
+    }
+    tr:hover {
+      background-color: #ffe0b2;
+    }
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #ff9800;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .back-btn:hover {
+      background-color: #e65100;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Available Routes and Prices</h1>
+
+  <table class="route-table">
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Price (RWF)</th>
+    </tr>
+    <tr>
+  <td>Kigali</td>
+  <td>Huye</td>
+  <td>3,000</td>
+  <td><a href="payment.html?route=Kigali-Huye&price=3000">Select</a></td>
+</tr>
+
+    <tr>
+      <td>Kigali</td>
+      <td>Musanze</td>
+      <td>2,500</td>
+    </tr>
+    <tr>
+      <td>Kigali</td>
+      <td>Rubavu</td>
+      <td>3,500</td>
+    </tr>
+    <tr>
+      <td>Kigali</td>
+      <td>Rusizi</td>
+      <td>5,000</td>
+    </tr>
+    <tr>
+      <td>Kigali</td>
+      <td>Nyagatare</td>
+      <td>4,000</td>
+    </tr>
+    <tr>
+      <td>Kigali</td>
+      <td>Karongi</td>
+      <td>3,800</td>
+    </tr>
+  </table>
+
+  <a href="transport_company.html" class="back-btn">← Back to Companies</a>
+
+</body>
+</html>

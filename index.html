@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Rwanda Bus Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        nav {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #0066cc;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bus-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #0055aa;
+        }
+        
+        .features {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .features h2 {
+            margin-bottom: 2rem;
+            color: #0066cc;
+        }
+        
+        .feature-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Rwanda Bus</div>
+        <ul class="nav-links">
+            <li><a href="home page">Home</a></li>
+           
+		   
+            <li><a href="log in page">Log in</a></li>
+            <li><a href="sigin up ">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Rwanda's Trusted Bus Booking Platform</h1>
+        <p>Book your tickets anytime, anywhere. Find trusted transport companies, available routes, and pay securely.</p>
+        <div>
+            <a href="log in page" class="cta-button">Log in</a>
+            <a href=" #" class="cta-button">Browse Routes</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose Our Platform</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <h3>Easy Booking</h3>
+                <p>Simple and fast booking process that saves you time and hassle.</p>
+            </div>
+            <div class="card">
+                <h3>Trusted Companies</h3>
+                <p>We partner only with licensed and reliable transport companies.</p>
+            </div>
+            <div class="card">
+                <h3>Secure Payments</h3>
+                <p>Your transactions are protected with industry-standard security.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 RwandaBus. All rights reserved.</p>
+    </footer>
+</body>
+</html>

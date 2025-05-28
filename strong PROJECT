@@ -1,0 +1,31 @@
+<html>
+     <head>
+	    <title> ticket reservation</title>
+	<head/>
+	
+	<body>
+	<center>
+<!--html HEADING-->
+	<table
+	style="margin-left:30p" border="1" height="100%" width="100%">
+	<tr><td colspan="5" style="background-color:yellow"><i>TICKET RESERVATION SYSTEM</i></td></tr>
+	<tr><td style="background-color:yellow">HOME</td><td style="background-color:red"><a href="road reservation.html">RESERVATION</td><td style="background-color:green"><a href="route.html">ROUTE</td><td style="background-color:white"><a href="campany.html">COMPANY</td><td style="background-color:orange"><a href="payment.html">PAYMENT</td></tr>
+	<tr><td colspan="3" rowspan="2" ><img src="photo/kenzo.jpg"height="500" width="1000"></td><td colspan="2"> <img src="photo/rura.JPEG"height="300" width="300"></td></tr> 
+	<tr><td colspan="2"><img src="photo/PAY.JPEG"height="200" width="310"></td></tr>
+	<tr><td>LOG IN </td><td colspan="3" style="background-color:blue">FULL INFORMATION ON SYSTEM </td><td colspan="2"  style="background-color:orange">DOWN LOADING APP </td></tr>
+	
+	
+	
+	
+
+	</table >
+
+</center>
+
+<!--html PARAGRATH, LINKS-->
+
+<!--html FORMATING-->
+
+<!--html  FORMATING--> 
+	</body>
+</html>

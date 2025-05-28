@@ -1,0 +1,168 @@
+<html >
+<head>
+  <meta charset="">
+  <title> Report of Company</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6fb;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .company-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: 0.3s ease-in-out;
+    }
+
+    .company-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .company-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1565c0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .report-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    .report-label {
+      color: #555;
+    }
+
+    .report-value {
+      font-weight: bold;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .report-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .report-value {
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Report - Transport Companies Overview</h1>
+
+  <div class="companies-grid">
+
+ 
+    <div class="company-card">
+      <div class="company-name">Volcano Express</div>
+      <div class="report-item">
+        <div class="report-label">Passengers:</div>
+        <div class="report-value">78</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Bookings:</div>
+        <div class="report-value">68</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Payments Made:</div>
+        <div class="report-value">65</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Revenue:</div>
+        <div class="report-value">900,000 RWF</div>
+      </div>
+    </div>
+
+  
+    <div class="company-card">
+      <div class="company-name">Ritco Ltd</div>
+      <div class="report-item">
+        <div class="report-label">Passengers:</div>
+        <div class="report-value">52</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Bookings:</div>
+        <div class="report-value">49</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Payments Made:</div>
+        <div class="report-value">47</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Revenue:</div>
+        <div class="report-value">720,000 RWF</div>
+      </div>
+    </div>
+
+  
+    <div class="company-card">
+      <div class="company-name">CAPITAL</div>
+      <div class="report-item">
+        <div class="report-label">Passengers:</div>
+        <div class="report-value">44</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Bookings:</div>
+        <div class="report-value">41</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Payments Made:</div>
+        <div class="report-value">39</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Revenue:</div>
+        <div class="report-value">520,000 RWF</div>
+      </div>
+    </div>
+
+   
+    <div class="company-card">
+      <div class="company-name">OMEGA.LTD</div>
+      <div class="report-item">
+        <div class="report-label">Passengers:</div>
+        <div class="report-value">40</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Bookings:</div>
+        <div class="report-value">37</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Payments Made:</div>
+        <div class="report-value">36</div>
+      </div>
+      <div class="report-item">
+        <div class="report-label">Total Revenue:</div>
+        <div class="report-value">470,000 RWF</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

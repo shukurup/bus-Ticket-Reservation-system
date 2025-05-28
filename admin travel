@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Travel Status</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1565c0;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    select, button {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #42a5f5;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #1e88e5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin - Manage Travel Status</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Passenger ID</th>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>Route</th>
+        <th>Date</th>
+        <th>Seat Number</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#001</td>
+        <td>Jean Mukasa</td>
+        <td>0788123456</td>
+        <td>Kigali Express</td>
+        <td>Kigali - Huye</td>
+        <td>2025-04-20</td>
+        <td>
+          <select>
+            <option>1B</option>
+            <option>2B</option>
+            <option>3B</option>
+            <option>4B</option>
+          </select>
+        </td>
+        <td>
+          <select>
+            <option>Not Yet</option>
+            <option>Went</option>
+          </select>
+        </td>
+        <td><button>Update</button></td>
+      </tr>
+
+      <tr>
+        <td>#002</td>
+        <td>Alice Uwase</td>
+        <td>0788001122</td>
+        <td>Ritco</td>
+        <td>Nyabugogo - Musanze</td>
+        <td>2025-04-21</td>
+        <td>
+          <select>
+            <option>1A</option>
+            <option>2A</option>
+            <option>3A</option>
+            <option>4A</option>
+          </select>
+        </td>
+        <td>
+          <select>
+            <option>Not Yet</option>
+            <option>Went</option>
+          </select>
+        </td>
+        <td><button>Update</button></td>
+      </tr>
+
+     
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding: 20px 0;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 15px 20px;
+      cursor: pointer;
+    }
+    .sidebar ul li:hover {
+      background-color: #34495e;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    .section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+
+    /* Report styles */
+    .report-container {
+      margin-top: 20px;
+    }
+    .companies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .company-card {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .company-card:hover {
+      background-color: #e3f2fd;
+    }
+    .company-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .report-item {
+      margin-bottom: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin</h2>
+    <ul>
+     
+	   <li onclick="showSection('report')">View Reports</li>
+	   
+      <!-- Add more sections here as needed -->
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <!-- REPORT SECTION -->
+    <div id="report" class="section active">
+      <h2>Company Reports</h2>
+      <div class="report-container">
+        <div class="companies-grid">
+          <div class="company-card" onclick="showCompanyDetails('volcano')">
+            <div class="company-name">Volcano Express</div>
+            <div class="report-item"><strong>Passengers:</strong> 78</div>
+            <div class="report-item"><strong>Total Bookings:</strong> 68</div>
+            <div class="report-item"><strong>Payments Made:</strong> 65</div>
+            <div class="report-item"><strong>Total Revenue:</strong> 900,000 RWF</div>
+          </div>
+          <div class="company-card" onclick="showCompanyDetails('ritco')">
+            <div class="company-name">Ritco Ltd</div>
+            <div class="report-item"><strong>Passengers:</strong> 65</div>
+            <div class="report-item"><strong>Total Bookings:</strong> 60</div>
+            <div class="report-item"><strong>Payments Made:</strong> 55</div>
+            <div class="report-item"><strong>Total Revenue:</strong> 780,000 RWF</div>
+          </div>
+          <div class="company-card" onclick="showCompanyDetails('capital')">
+            <div class="company-name">Capital Express</div>
+            <div class="report-item"><strong>Passengers:</strong> 50</div>
+            <div class="report-item"><strong>Total Bookings:</strong> 45</div>
+            <div class="report-item"><strong>Payments Made:</strong> 40</div>
+            <div class="report-item"><strong>Total Revenue:</strong> 600,000 RWF</div>
+          </div>
+          <div class="company-card" onclick="showCompanyDetails('omega')">
+            <div class="company-name">Omega Bus</div>
+            <div class="report-item"><strong>Passengers:</strong> 58</div>
+            <div class="report-item"><strong>Total Bookings:</strong> 53</div>
+            <div class="report-item"><strong>Payments Made:</strong> 50</div>
+            <div class="report-item"><strong>Total Revenue:</strong> 720,000 RWF</div>
+          </div>
+        </div>
+		 
+        <p> <a href="ADMIN">HOME </p>
+        <!-- Detailed company data table -->
+        <div id="company-details" style="display: none;">
+          <h3 id="company-title">Company Details</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Passenger</th>
+                <th>Phone</th>
+                <th>Route</th>
+                <th>Seat</th>
+                <th>Payment</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="details-body">
+              <!-- Will be populated via JavaScript -->
+            </tbody>
+          </table>
+          <p><strong>Total Revenue:</strong> <span id="total-revenue">0 RWF</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    const companyData = {
+      volcano: [
+        { name: "Patrick Kenzo", phone: "0723456789", route: "Kigali - Musanze", seat: "1B", payment: "MoMo", price: 3500 },
+        { name: "Alice Niyonsaba", phone: "0798765432", route: "Kigali - Huye", seat: "3C", payment: "Airtel", price: 3000 },
+      ],
+      ritco: [
+        { name: "Mugisha Shukuru", phone: "0781234567", route: "Huye - Kigali", seat: "2A", payment: "MoMo", price: 3000 },
+      ],
+      capital: [
+        { name: "Jean Claude", phone: "0787654321", route: "Kigali - Muhanga", seat: "4D", payment: "Airtel", price: 2800 },
+      ],
+      omega: [
+        { name: "Iradukunda Kevin", phone: "0734567890", route: "Kigali - Rubavu", seat: "5A", payment: "MoMo", price: 3200 },
+      ]
+    };
+
+    function showCompanyDetails(companyKey) {
+      const data = companyData[companyKey];
+      const tbody = document.getElementById("details-body");
+      const title = document.getElementById("company-title");
+      const totalSpan = document.getElementById("total-revenue");
+
+      tbody.innerHTML = "";
+      let total = 0;
+
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.name}</td>
+          <td>${row.phone}</td>
+          <td>${row.route}</td>
+          <td>${row.seat}</td>
+          <td>${row.payment}</td>
+          <td>${row.price.toLocaleString()} RWF</td>
+        `;
+        tbody.appendChild(tr);
+        total += row.price;
+      });
+
+      title.textContent = `Company Details - ${companyKey.toUpperCase()}`;
+      totalSpan.textContent = total.toLocaleString() + " RWF";
+      document.getElementById("company-details").style.display = "block";
+    }
+  </script>
+</body>
+</html>

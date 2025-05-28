@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src=" ddd.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tickets Reservation System</title>
+  
+ 
+  
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e88e5;
+      padding: 20px 0;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd600;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #bbdefb, #e3f2fd);
+      padding: 50px 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-right: 30px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .hero-text .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .hero-text .buttons a {
+      padding: 12px 24px;
+      background-color: #1e88e5;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .hero-text .buttons a:hover {
+      background-color: #1565c0;
+    }
+
+    .bus-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bus-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .features {
+      background-color: #f1f8e9;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 4px solid #aed581;
+    }
+
+    .features h3 {
+      font-size: 2rem;
+      color: #558b2f;
+      margin-bottom: 15px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .features ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+  <script type="text/javascript">
+  <script>
+  function message()
+  
+  </script>
+  <script type="text/javascript" src="ddd.js"></script>
+   
+</head>
+<body onload="message()">
+
+<script type="text/javascript">
+  {
+  document.write("<h1>this is heading</h1>");
+  document.write("<p>this is a paragraphy</p>");
+  alert("this is another paragraphy")
+  }
+  </script>
+
+<header>
+  <div class="container nav">
+    <h1>Tickets Reservation System</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Routes</a>
+      <a href="#">Companies</a>
+      <a href="log in page">Log in</a>
+      <a href="Sigin up">Sign Up</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-text">
+    <h2>Welcome to Rwanda's Trusted Bus Booking Platform</h2>
+    <p>Book your tickets anytime, anywhere. Find trusted transport companies, available routes, and pay securely.</p>
+    <div class="buttons">
+      <a href="log in page">Log In</a>
+      <a href="#">Browse Routes</a>
+    </div>
+	
+  </div>
+  
+  <script>
+  getday()
+  </script>
+  
+  <div class="bus-image">
+    <img src="photo/kenzo.jpg"  height="300" width="600" alt="Bus Image">
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h3>Why Choose Us?</h3>
+    <ul>
+
+      <li>✔ Book from anywhere – no need to visit offices</li>
+      <li>✔ Choose from over 10 trusted transport companies</li>
+      <li>✔ View real-time route information and prices</li>
+      <li>✔ Secure mobile payment methods (MoMo, AirtelMoney)</li>
+      <li>✔ Get travel updates and seat confirmation online</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>

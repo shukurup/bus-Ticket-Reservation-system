@@ -1,0 +1,13 @@
+<html>
+<head>
+  <script type="text/javascript" src=" ddd.js"></script >
+  
+ <body> 
+ <h1>javascript  variables </h1>
+ 
+<script>
+  function message()
+  </script>
+ 
+</body>
+</html>

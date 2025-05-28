@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	    <title> shukuru page one</title>
+	<head/>
+	
+	<body onload ="message()">
+       enter full name :
+<input type="text " id="firstname " onkeyup="mykeyupfunction()">
+</br>	
+</br>
+enter you email:
+<input type="text " id="email" />
+</br>	
+</br>
+<p>my  firstname is:<span style="color :green;font-size :40px;"id="test"></span></p>
+   
+<h2 id ="demo" >test mouse over me </h2>
+
+	</body>
+	<script >
+	function message(){
+	alert("i'm the messange ")
+	}
+	function mykeyupfunction(){
+	var input = document.getElementbyid("firstname").value;
+	document.getElementbyid(test),innerhtml =input;
+	}
+	document.getElementbyid("email").onchange = function(){
+	myfunctionchange()
+	};
+	function myfunctionchange(){
+	var x = document.getElementbyid("email")
+	var.value = x.value.tolowercase();
+	}
+	document.getElementbyid("firstname").addEventlistener("focus", myfunction);
+	function myfunction(){
+    document.getElementbyid("firstname").style.background-color="red"
+	}
+	document.getElementbyid("email").addEventlistener("blur", myfunctionblur);
+	function myfunctionblur(){
+	alert("your input element lost focus");
+	}
+	document.getElementbyid("demo").onmouseover = function(){
+	mouseover()
+	};
+	function mouseover()
+	document.getElementbyid("demo").style.color = "red";
+	
+	}
+	document.getElementbyid("demo").onmouseout = function(){
+	mouse()
+	};
+	function mouseout(){
+	document.getElementbyid("demo").style.color = "cyan";
+	}
+	
+	
+	</script>
+</html>

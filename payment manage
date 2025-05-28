@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Payments - Admin Panel</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6fa;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .btn {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .approve {
+      background-color: #27ae60;
+    }
+
+    .reject {
+      background-color: #c0392b;
+    }
+
+    .status {
+      color: GREEN;
+      font-weight: bold;
+    }
+
+    .status-approved {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status-rejected {
+      color: GREEN;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Manage Payments</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Passenger Name</th>
+        <th>Company</th>
+        <th>Route</th>
+        <th>Amount</th>
+        <th>Method</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SHUKURU PATRICK</td>
+        <td>Volcano Express</td>
+        <td>Kigali - Musanze</td>
+        <td>3,500 RWF</td>
+        <td>MoMo</td>
+        <td class="status">.....</td>
+        <td>
+          <button class="btn approve">Approve</button>
+          <button class="btn reject">Reject</button>
+        </td>
+      </tr>
+      <tr>
+        <td>RUHOZAHOZIII</td>
+        <td>Ritco Ltd</td>
+        <td>Huye - Kigali</td>
+        <td>4,200 RWF</td>
+        <td>Airtel Money</td>
+        <td class="status-approved">......</td>
+        <td>
+          <button class="btn approve">Approve</button>
+          <button class="btn reject">Reject</button>
+        </td>
+      </tr>
+      <tr>
+        <td>VALKWIZERA</td>
+        <td>CAPITAL.LTD</td>
+        <td>Rubavu - Kigali</td>
+        <td>5,000 RWF</td>
+        <td>MoMo</td>
+        <td class="status-rejected">.....</td>
+        <td>
+          <button class="btn approve">Approve</button>
+          <button class="btn reject">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

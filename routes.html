@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Route</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e3f2fd;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 30px;
+    }
+    .company-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .company-photo {
+      width: 350px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #1976d2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .company-name {
+      font-size: 1.5em;
+      color: #0d47a1;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .date-selection {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px auto;
+      width: 90%;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .date-selection select {
+      padding: 8px;
+      border: 1px solid #90caf9;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    table {
+      width: 90%;
+      margin: 0 auto 30px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border: 1px solid #bbdefb;
+    }
+    th {
+      background-color: #1976d2;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f1f8ff;
+    }
+    tr:hover {
+      background-color: #bbdefb;
+    }
+    select {
+      padding: 6px;
+      border: 1px solid #90caf9;
+      border-radius: 4px;
+      width: 100px;
+    }
+    button {
+      padding: 8px 14px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0d47a1;
+    }
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background: #64b5f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .back-btn:hover {
+      background-color: #1976d2;
+    }
+    .from-col, .to-col {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="company-info">
+    <img id="companyPhoto" class="company-photo" src="" alt="Bus Company Photo">
+    <div id="companyHeader" class="company-name"></div>
+  </div>
+
+  <div class="date-selection">
+    <span>Travel Date:</span>
+    <select id="travelDay">
+      <!-- Days will be populated by JavaScript -->
+    </select>
+    <select id="travelMonth">
+      <!-- Months will be populated by JavaScript -->
+    </select>
+    <select id="travelYear">
+      <!-- Years will be populated by JavaScript -->
+    </select>
+  </div>
+
+  <h1>Select Route</h1>
+
+  <table>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Price (RWF)</th>
+      <th>Available Times</th>
+      <th>Available Seats</th>
+      <th>Book</th>
+    </tr>
+    <!-- Route 1: Kigali to Huye -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Huye</td>
+      <td>3,500</td>
+      <td>
+        <select id="time1">
+          <option value="">Select Time</option>
+          <option value="06:30 AM">06:30 AM</option>
+          <option value="09:00 AM">09:00 AM</option>
+          <option value="02:00 PM">02:00 PM</option>
+        </select>
+      </td>
+      <td><select id="seat1"></select></td>
+      <td><button onclick="bookRoute('Kigali-Huye', 3500, 'seat1', 'time1')">Book</button></td>
+    </tr>
+    <!-- Route 2: Kigali to Musanze -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Musanze</td>
+      <td>4,000</td>
+      <td>
+        <select id="time2">
+          <option value="">Select Time</option>
+          <option value="05:45 AM">05:45 AM</option>
+          <option value="11:30 AM">11:30 AM</option>
+          <option value="03:15 PM">03:15 PM</option>
+        </select>
+      </td>
+      <td><select id="seat2"></select></td>
+      <td><button onclick="bookRoute('Kigali-Musanze', 4000, 'seat2', 'time2')">Book</button></td>
+    </tr>
+    <!-- Route 3: Kigali to Rubavu -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Rubavu</td>
+      <td>4,500</td>
+      <td>
+        <select id="time3">
+          <option value="">Select Time</option>
+          <option value="07:15 AM">07:15 AM</option>
+          <option value="01:00 PM">01:00 PM</option>
+        </select>
+      </td>
+      <td><select id="seat3"></select></td>
+      <td><button onclick="bookRoute('Kigali-Rubavu', 4500, 'seat3', 'time3')">Book</button></td>
+    </tr>
+    <!-- Route 4: Kigali to Rusizi -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Rusizi</td>
+      <td>6,000</td>
+      <td>
+        <select id="time4">
+          <option value="">Select Time</option>
+          <option value="06:00 AM">06:00 AM</option>
+          <option value="10:30 AM">10:30 AM</option>
+        </select>
+      </td>
+      <td><select id="seat4"></select></td>
+      <td><button onclick="bookRoute('Kigali-Rusizi', 6000, 'seat4', 'time4')">Book</button></td>
+    </tr>
+    <!-- Route 5: Kigali to Rwamagana -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Rwamagana</td>
+      <td>2,500</td>
+      <td>
+        <select id="time5">
+          <option value="">Select Time</option>
+          <option value="07:00 AM">07:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="04:30 PM">04:30 PM</option>
+        </select>
+      </td>
+      <td><select id="seat5"></select></td>
+      <td><button onclick="bookRoute('Kigali-Rwamagana', 2500, 'seat5', 'time5')">Book</button></td>
+    </tr>
+    <!-- Route 6: Kigali to Kibuye -->
+    <tr>
+      <td class="from-col">Kigali</td>
+      <td class="to-col">Kibuye</td>
+      <td>4,200</td>
+      <td>
+        <select id="time6">
+          <option value="">Select Time</option>
+          <option value="08:00 AM">08:00 AM</option>
+          <option value="02:45 PM">02:45 PM</option>
+        </select>
+      </td>
+      <td><select id="seat6"></select></td>
+      <td><button onclick="bookRoute('Kigali-Kibuye', 4200, 'seat6', 'time6')">Book</button></td>
+    </tr>
+  </table>
+
+  <a href="company page " class="back-btn">← Back to Companies</a>
+
+  <script>
+    // Company data with photos and routes
+    const companyData = {
+      "Volcano Express": {
+        photo: "photo/volcano.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      },
+      "Ritco Ltd": {
+        photo: "photo/Ritco.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      },
+      "Alpha Express": {
+        photo: "photo/Alpha.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      },
+      "Royal Express": {
+        photo: "photo/Royal.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      },
+      "Kigali Coach": {
+        photo: "photo/Kigali.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      },
+      "Omega Express": {
+        photo: "photo/Omega.jpg",
+        routes: ["Kigali-Huye", "Kigali-Musanze", "Kigali-Rubavu", "Kigali-Rusizi", "Kigali-Rwamagana", "Kigali-Kibuye"]
+      }
+    };
+
+    // Get company from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const company = urlParams.get('company');
+
+    // Display company info
+    if (company && companyData[company]) {
+      document.getElementById('companyPhoto').src = companyData[company].photo;
+      document.getElementById('companyPhoto').alt = `${company} Bus`;
+      document.getElementById('companyHeader').textContent = company;
+      
+      // Hide routes not offered by this company
+      const companyRoutes = companyData[company].routes;
+      const tableRows = document.querySelectorAll('table tr:not(:first-child)');
+      
+      tableRows.forEach(row => {
+        const from = row.cells[0].textContent;
+        const to = row.cells[1].textContent;
+        const routeName = `${from}-${to}`;
+        
+        if (!companyRoutes.includes(routeName)) {
+          row.style.display = 'none';
+        }
+      });
+    } else {
+      document.getElementById('companyPhoto').src = "https://via.placeholder.com/600x400?text=Bus+Company";
+      document.getElementById('companyHeader').textContent = "Bus Company";
+    }
+	
+
+    // Populate date dropdowns
+    function populateDateDropdowns() {
+      const daySelect = document.getElementById('travelDay');
+      const monthSelect = document.getElementById('travelMonth');
+      const yearSelect = document.getElementById('travelYear');
+      
+      // Days (1-31)
+      daySelect.innerHTML = '<option value="">Day</option>';
+      for (let d = 1; d <= 31; d++) {
+        const option = document.createElement('option');
+        option.value = d;
+        option.textContent = d;
+        daySelect.appendChild(option);
+      }
+      
+      // Months
+      const months = ["January", "February", "March", "April", "May", "June", 
+                     "July", "August", "September", "October", "November", "December"];
+      monthSelect.innerHTML = '<option value="">Month</option>';
+      months.forEach((month, index) => {
+        const option = document.createElement('option');
+        option.value = index + 1;
+        option.textContent = month;
+        monthSelect.appendChild(option);
+      });
+      
+      // Years (current year + next 2 years)
+      const currentYear = new Date().getFullYear();
+      yearSelect.innerHTML = '<option value="">Year</option>';
+      for (let y = currentYear; y <= currentYear + 2; y++) {
+        const option = document.createElement('option');
+        option.value = y;
+        option.textContent = y;
+        yearSelect.appendChild(option);
+      }
+      
+      // Set default to today
+      const today = new Date();
+      daySelect.value = today.getDate();
+      monthSelect.value = today.getMonth() + 1;
+      yearSelect.value = today.getFullYear();
+    }
+
+    // Generate seat options
+    function generateSeats() {
+      const seatOptions = [];
+      ['A', 'B', 'C', 'D'].forEach(letter => {
+        for (let i = 1; i <= 5; i++) {
+          seatOptions.push(`${letter}${i}`);
+        }
+      });
+      return seatOptions;
+    }
+
+    // Populate all seat dropdowns
+    function populateSeats(selectId) {
+      const select = document.getElementById(selectId);
+      select.innerHTML = '<option value="">Select</option>';
+      generateSeats().forEach(seat => {
+        const option = document.createElement('option');
+        option.value = seat;
+        option.textContent = seat;
+        select.appendChild(option);
+      });
+    }
+
+    // Booking function
+    function bookRoute(route, price, seatId, timeId) {
+      const seat = document.getElementById(seatId).value;
+      const day = document.getElementById('travelDay').value;
+      const month = document.getElementById('travelMonth').value;
+      const year = document.getElementById('travelYear').value;
+      const selectedTime = document.getElementById(timeId).value;
+      
+      if (!seat) {
+        alert("Please select a seat number.");
+        return;
+      }
+      
+      if (!day || !month || !year) {
+        alert("Please select travel date.");
+        return;
+      }
+      
+      if (!selectedTime) {
+        alert("Please select a departure time.");
+        return;
+      }
+      
+      // Format date as DD/MM/YYYY
+      const formattedDate = `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+      
+      const paymentUrl = `payment.html?company=${encodeURIComponent(company)}&route=${encodeURIComponent(route)}&price=${price}&seat=${encodeURIComponent(seat)}&date=${formattedDate}&time=${encodeURIComponent(selectedTime)}`;
+      window.location.href = paymentUrl;
+    }
+
+    // Initialize all components
+    populateDateDropdowns();
+    ["seat1", "seat2", "seat3", "seat4", "seat5", "seat6"].forEach(populateSeats);
+  </script>
+</body>
+</html>

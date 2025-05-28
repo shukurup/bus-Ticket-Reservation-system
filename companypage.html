@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Transport Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e3f2fd;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+    }
+    .companies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .company {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid #90caf9;
+      transition: 0.3s;
+    }
+    .company:hover {
+      background: #bbdefb;
+      transform: scale(1.02);
+    }
+    .company img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background-color: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    a:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select a Transport Company</h1>
+
+  <div class="companies">
+    <div class="company">
+      <img src="Routes.html" alt="Volcano Express">
+      <h3>Volcano Express</h3>
+      <a href="route.html?company=Volcano%20Express">View Routes</a>
+    </div>
+    <div class="company">
+      <img src="" alt="Ritco Ltd">
+      <h3>Ritco Ltd</h3>
+      <a href="route.html?company=Ritco%20Ltd">View Routes</a>
+    </div>
+    <div class="company">
+      <img src="https://via.placeholder.com/300x150?text=Alpha+Express" alt="Alpha Express">
+      <h3>Alpha Express</h3>
+      <a href="route.html?company=Alpha%20Express">View Routes</a>
+    </div>
+    <div class="company">
+      <img src="https://via.placeholder.com/300x150?text=Royal+Express" alt="Royal Express">
+      <h3>Royal Express</h3>
+      <a href="route.html?company=Royal%20Express">View Routes</a>
+    </div>
+    <div class="company">
+      <img src="https://via.placeholder.com/300x150?text=Kigali+Coach" alt="Kigali Coach">
+      <h3>Kigali Coach</h3>
+      <a href="route.html?company=Kigali%20Coach">View Routes</a>
+    </div>
+	<div class="company">
+      <img src="https://via.placeholder.com/300x150?text=omega+Express" alt="omega Express">
+      <h3>omega Express</h3>
+      <a href="route.html?company=Kigali%20Coach">View Routes</a>
+    </div>
+  </div>
+</body>
+</html>

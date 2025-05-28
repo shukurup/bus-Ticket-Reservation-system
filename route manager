@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Manage Routes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 30px;
+    }
+
+    .form-section, .table-section {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .action-btn {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background-color: #4caf50;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin - Manage Routes</h1>
+
+  <div class="form-section">
+    <h2>Add / Update Route</h2>
+    <form>
+      <label for="routeId">Route ID (for update only)</label>
+      <input type="text" id="routeId" placeholder=" enter new route">
+
+      <label for="start">Start Location</label>
+      <input type="text" id="start" placeholder=" example:kigali">
+
+      <label for="destination">Destination</label>
+      <input type="text" id="destination" placeholder="example: Huye">
+
+      <label for="price">Price (RWF)</label>
+      <input type="number" id="price" placeholder="ex:s 3000">
+
+      <button type="submit">Save Route</button>
+    </form>
+  </div>
+
+  <div class="table-section">
+    <h2>All Routes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Start</th>
+          <th>Destination</th>
+          <th>Price (RWF)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>Kigali</td>
+          <td>Musanze</td>
+          <td>2500</td>
+          <td>
+            <button class="action-btn edit-btn">Edit</button>
+            <button class="action-btn delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Huye</td>
+          <td>Rusizi</td>
+          <td>5000</td>
+          <td>
+            <button class="action-btn edit-btn">Edit</button>
+            <button class="action-btn delete-btn">Delete</button>
+          </td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

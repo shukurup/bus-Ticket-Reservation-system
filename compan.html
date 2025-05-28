@@ -1,0 +1,330 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies - Rwanda Bus Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        nav {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #0066cc;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            color: #0066cc;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .search-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .search-button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            align-self: flex-end;
+            height: 42px;
+        }
+        
+        .search-button:hover {
+            background-color: #0055aa;
+        }
+        
+        .companies-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .company-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .company-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+        
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .company-rating {
+            color: #ffc107;
+            margin: 0.5rem 0;
+        }
+        
+        .company-details {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .company-routes {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .view-button {
+            display: block;
+            width: 100%;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .view-button:hover {
+            background-color: #0055aa;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">RwandaBus</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+          
+          
+            <li><a href="log in page">Log in</a></li>
+            <li><a href="sigin up">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Trusted Bus Companies</h1>
+        
+        <div class="search-box">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="search">Search Companies</label>
+                    <input type="text" id="search" placeholder="Enter company name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location">
+                        <option value="">All Locations</option>
+                        <option value="kigali">Kigali</option>
+                        <option value="musanze">Musanze</option>
+                        <option value="rubavu">Rubavu</option>
+                        <option value="huye">Huye</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+        
+        <div class="companies-list">
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">VE</div>
+                    <div>
+                        <div class="company-name">Volcano Express</div>
+                        <div class="company-rating">★★★★☆ (4.2)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>Specializing in the Kigali-Musanze route with comfortable coaches and reliable service.</p>
+                    <p class="company-routes">Main routes: Kigali → Musanze, Musanze → Kigali</p>
+                </div>
+                <a href="company-detail.html?id=1" class="view-button">View Company</a>
+            </div>
+            
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">VV</div>
+                    <div>
+                        <div class="company-name">Virunga Voyager</div>
+                        <div class="company-rating">★★★★★ (4.8)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>Premium service to Rubavu with luxury coaches and onboard amenities.</p>
+                    <p class="company-routes">Main routes: Kigali → Rubavu, Rubavu → Kigali</p>
+                </div>
+                <a href="log in page" class="view-button">Booking</a>
+            </div>
+            
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">SC</div>
+                    <div>
+                        <div class="company-name">Southern Comfort</div>
+                        <div class="company-rating">★★★☆☆ (3.7)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>Affordable travel to Huye and other southern destinations with frequent departures.</p>
+                    <p class="company-routes">Main routes: Kigali → Huye, Huye → Kigali</p>
+                </div>
+                <a href="log in page" class="view-button">booking</a>
+            </div>
+            
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">RB</div>
+                    <div>
+                        <div class="company-name">Rwanda Bus</div>
+                        <div class="company-rating">★★★★☆ (4.1)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>National operator serving all major routes across Rwanda with standard coaches.</p>
+                    <p class="company-routes">Main routes: All major cities</p>
+                </div>
+                <a href="log in page" class="view-button">booking</a>
+            </div>
+            
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">KE</div>
+                    <div>
+                        <div class="company-name">Kigali Express</div>
+                        <div class="company-rating">★★★★☆ (4.3)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>Specializing in routes from Kigali to all major destinations with express service.</p>
+                    <p class="company-routes">Main routes: Kigali to all destinations</p>
+                </div>
+                <a href="log in page" class="view-button">booking</a>
+            </div>
+            
+            <div class="company-card">
+                <div class="company-header">
+                    <div class="company-logo">MB</div>
+                    <div>
+                        <div class="company-name">Mountain Breeze</div>
+                        <div class="company-rating">★★★☆☆ (3.9)</div>
+                    </div>
+                </div>
+                <div class="company-details">
+                    <p>Scenic routes through Rwanda's mountainous regions with large windows for views.</p>
+                    <p class="company-routes">Main routes: Musanze, Rubavu, and western routes</p>
+                </div>
+                <a href="log in page" class="view-button">booking</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 RwandaBus. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4c3;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #33691e;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      background-color: #e6ee9c;
+      padding: 15px;
+      border-left: 4px solid #827717;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      margin: 8px 0;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #558b2f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #33691e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Confirm & Pay</h2>
+
+    <div class="info" id="summaryBox"></div>
+
+    <form>
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">-- Select Method --</option>
+        <option>MTN Mobile Money</option>
+        <option>Airtel Money</option>
+        <option>Visa Card</option>
+      </select>
+
+      <label for="details">Phone / Card Number</label>
+      <input type="text" id="details" required placeholder="078xxxxxxx .">
+
+      <button type="submit">Make Payment</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const company = params.get("company");
+    const route = params.get("route");
+    const price = params.get("price");
+    const seat = params.get("seat");
+
+    document.getElementById("summaryBox").innerHTML = `
+      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>Route:</strong> ${route}</p>
+      <p><strong>Price:</strong> ${price} RWF</p>
+      <p><strong>Seat Number:</strong> ${seat}</p>
+    `;
+  </script>
+</body>
+</html>
